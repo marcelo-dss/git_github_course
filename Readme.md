@@ -22,6 +22,9 @@ Com `git diff --name-only` é possível ver apenas a lista de arquivos modificad
 
 * git add - Rastreando novos arquivos
 * git commit - Confirmando suas alterações
+
+com `git commit -am` é possível adicionar e commitar em uma única operação
+
 * git rm - Removendo arquivos
 * git mv file_from file_to - Movendo arquivos
 
@@ -30,6 +33,13 @@ Com `git diff --name-only` é possível ver apenas a lista de arquivos modificad
 * git log
 
 ### [Desfazendo coisas](https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things)
+
+* git commit --amend - Uma forma comum de desfazer as coisas no Git ocorre quando você confirma muito cedo e possivelmente esquece de adicionar alguns arquivos ou estraga sua mensagem de confirmação. Se você deseja refazer a confirmação, faça as alterações adicionais que você esqueceu, prepare-as e use o `commit` novamente usando a opção `--amend`
+* git checkout - "Desmodificando" um arquivo modificado, mas não adicionado
+* git reset HEAD - "Desmodificando" um arquivo modificado e adicionado (ver [--soft, --mixed e --hard](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified#_git_reset))
+
+Após aplicar o `git reset HEAD`, utilize o `git checkout` 
+
 
 
 $\Overrightarrow{AB}$
