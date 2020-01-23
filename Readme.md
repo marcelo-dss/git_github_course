@@ -2,9 +2,9 @@
 Arquivo da aula de Git e Github para iniciantes.
 
 ## Sobre o controle de versão
-O que é "controle de versão" e por que você deveria se importar? O controle de versão é um sistema que registra alterações em um arquivo ou conjunto de arquivos ao longo do tempo, para que você possa recuperar versões específicas mais tarde.
+o que é "controle de versão" e por que você deveria se importar? O controle de versão é um sistema que registra alterações em um arquivo ou conjunto de arquivos ao longo do tempo, para que você possa recuperar versões específicas mais tarde.
 
-É aqui que os Sistemas Distribuídos de Controle de Versão (DVCSs) entram em cena. Em um DVCS (como Git, Mercurial, Bazaar ou Darcs), os clientes não apenas conferem o último instantâneo dos arquivos; em vez disso, espelham completamente o repositório, incluindo seu histórico completo. Portanto, se algum servidor morrer, e esses sistemas estiverem colaborando por esse servidor, qualquer um dos repositórios do cliente poderá ser copiado para o servidor para restaurá-lo. Todo clone é realmente um backup completo de todos os dados.
+é aqui que os Sistemas Distribuídos de Controle de Versão (DVCSs) entram em cena. Em um DVCS (como Git, Mercurial, Bazaar ou Darcs), os clientes não apenas conferem o último instantâneo dos arquivos; em vez disso, espelham completamente o repositório, incluindo seu histórico completo. Portanto, se algum servidor morrer, e esses sistemas estiverem colaborando por esse servidor, qualquer um dos repositórios do cliente poderá ser copiado para o servidor para restaurá-lo. Todo clone é realmente um backup completo de todos os dados.
 
 [saiba mais em git-scm.com](https://git-scm.com/)
 
@@ -12,7 +12,7 @@ O que é "controle de versão" e por que você deveria se importar? O controle d
 
 ## Básico do Git 
 
-### [Gravando alterações no repositório](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
+### Gravando alterações no repositório
 
 * git init
 * git status
@@ -33,12 +33,14 @@ com `git commit -am` é possível adicionar e commitar em uma única operação
 * git rm - Removendo arquivos
 * git mv file_from file_to - Movendo arquivos
 
+[mais sobre alterações no repositório...](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
+
 ### Vendo o histórico de consolidação
 Veja mais em
 
 * git log
 
-[Veja mais...](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
+[mais sobre histórico de consolidação...](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
 
 ### Desfazendo coisas
 
@@ -48,7 +50,13 @@ Veja mais em
 
 Após aplicar o `git reset HEAD`, utilize o `git checkout` 
 
-[Veja mais...](https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things)
+[mais sobre desfazer as coisas...](https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things)
+
+### Reverter alguns commits existentes
+
+`git-revert`, reverte um commit sem apagá-lo do histórico de commits, diferentemente do `git checkout` e do  `git reset`  
+
+[mais sobre revert...](https://git-scm.com/docs/git-revert)
 
 ## Trabalhando com controles remotos
 
@@ -85,31 +93,31 @@ o `-u` é utilizado no primeiro push para *trackear* para onde vai (*origin*) e 
 
 `git clone git@github.com:marcelo-dss/git_github_course.git nomeRepositorioLocal`
 
-sendo nomeRepositorioLocal, por exemplo, *git_github_course_clone*
-
-[Veja mais sobre como trabalhar com controles remotos](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
+sendo _nomeRepositorioLocal_, por exemplo, *git_github_course_clone*
 
 ### Usando Fork (Bifurcação)
 
 veja: [contribuindo para um projeto](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project)
 
+[mais sobre trabalhar com controles remotos...](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
+
 ## Ramificação (Branch)
 
-Uma ramificação no Git é simplesmente um ponteiro móvel leve para um desses commits. O nome do ramo padrão no Git é *master*. Quando você começa a fazer confirmações, você recebe um ramo master que aponta para o último commit que você fez. Toda vez que você faz um commit, o ponteiro master do ramo avança automaticamente.
+uma ramificação no Git é simplesmente um ponteiro móvel leve para um desses commits. O nome do ramo padrão no Git é *master*. Quando você começa a fazer confirmações, você recebe um ramo master que aponta para o último commit que você fez. Toda vez que você faz um commit, o ponteiro master do ramo avança automaticamente.
 
-O ramo *"master"* no Git não é um ramo especial. É exatamente como qualquer outro ramo. A única razão pela qual quase todo repositório tem um é que o comando `git init` o cria por padrão e a maioria das pessoas não se preocupa em alterá-lo.
+o ramo *"master"* no Git não é um ramo especial. É exatamente como qualquer outro ramo. A única razão pela qual quase todo repositório tem um é que o comando `git init` o cria por padrão e a maioria das pessoas não se preocupa em alterá-lo.
 
-O que acontece quando você cria uma nova ramificação? Isso cria um novo ponteiro para você se movimentar. Digamos que você queira criar um novo ramo chamado *testing*. Você faz isso com o comando `git branch`: `$ git branch testing`
+o que acontece quando você cria uma nova ramificação? Isso cria um novo ponteiro para você se movimentar. Digamos que você queira criar um novo ramo chamado *testing*. Você faz isso com o comando `git branch`: `$ git branch testing`
 
-Isso cria um novo ponteiro para o mesmo commit em que você está atualmente.
+isso cria um novo ponteiro para o mesmo commit em que você está atualmente.
 
-Por que usar?
+por que usar?
 
-* Poder usar sem alterar o local principal ("*master*");
-* Facilmente "desligável", criando-os e apagando-os;
-* Permite várias pessoas trabalhando em diversos branches;
-* Evita conflitos em casos de muitos commits simultâneos;
-* Permite mesclar branchs "secundários" com o principal.
+* poder usar sem alterar o local principal ("*master*");
+* facilmente "desligável", criando-os e apagando-os;
+* permite várias pessoas trabalhando em diversos branches;
+* evita conflitos em casos de muitos commits simultâneos;
+* permite mesclar branchs "secundários" com o principal.
 
 [veja mais sobre branchs...](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
 
@@ -121,7 +129,9 @@ para visualizar o branch ativo, digite: `git branch`
 
 movendo-se entre branchs: `git checkout <nomeDoBranch>`
 
-deletando: `git branch -D <nomeDoBranch>`
+deletando branchs locais: `git branch -D <nomeDoBranch>`
+
+deletando branchs remotos: `git push origin :<nomeDoBranch>`
 
 ### Unindo branchs
 
@@ -131,11 +141,11 @@ supondo que você está em um branch chamado master e quiser mesclar outro branc
 
 analise o resultado com `git log --graph`
 
-Prós:
+prós:
 
 * operação não destrutiva - não destrõe commits, pelo contrário junta todos em um novo commit
 
-Contras:
+contras:
 
 * necessidade de commits extras;
 * histórico poluído
@@ -144,12 +154,12 @@ Contras:
 
 ### Rebase
 
-Prós:
+prós:
 
 * evita commits extras;
 * mantém um histórico linear
 
-Contras:
+contras:
 
 * perda da ordem cronológica
 
@@ -166,7 +176,7 @@ para ocultar arquivos mofificados ou estagiados (add) e impedir um commit:
 * para retorná-los aplicando as mudanças: `git stash apply`
 * para limpar todos os stashs: `git stash clear`
 
-[veja mais...](https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning)
+[mais sobre stashs...](https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning)
 
 ### Aliases do Git
 
@@ -182,7 +192,7 @@ o Git não infere automaticamente seu comando se você o digitar parcialmente. S
 ### Marcação (Tag)
 como a maioria dos VCSs, o Git tem a capacidade de marcar pontos específicos no histórico de um repositório como sendo importantes. Normalmente, as pessoas usar essa funcionalidade para pontos de liberação de marca ( *v1.0*, *v2.0* e assim por diante). Nesta seção, você aprenderá como listar tags existentes, como criar e excluir tags e quais são os diferentes tipos de tags.
 
-Listando suas tags: `git tag`
+listando suas tags: `git tag`
 
 #### Criando Tags
 o Git suporta dois tipos de tags: **leve** e **anotado** .
@@ -191,11 +201,10 @@ uma tag **leve** é ​​muito parecida com uma ramificação que não muda - �
 
 tags **anotadas**, no entanto, são armazenadas como objetos completos no banco de dados Git. Eles estão somados; conter o nome, o email e a data do marcador; ter uma mensagem de marcação; e pode ser assinado e verificado com o GNU Privacy Guard (GPG). Geralmente, é recomendável que você crie tags anotadas para ter todas essas informações; mas se você deseja uma tag temporária ou, por algum motivo, não deseja manter as outras informações, também estão disponíveis tags leves. **Exemplo:** `git tag -a 1.0.0 -m "Readme Finalizado"`.
 
-para subir as tags para o remoto: `git push tag origin master --tags`
+* subir as tags para o remoto: `git push origin master --tags`
+* excluir a tag do git local: `git tag -d 1.0.0`
+* excluir a tag do git remoto: `git push origin :1.0.0`, isso porque as **_tags remotas não são apagadas ao apagar as tags locais_**
 
 [Ver mais...](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
-
-
-
 
 $\Overrightarrow{AB}$
