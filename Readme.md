@@ -205,6 +205,6 @@ tags **anotadas**, no entanto, são armazenadas como objetos completos no banco 
 * excluir a tag do git local: `git tag -d 1.0.0`
 * excluir a tag do git remoto: `git push origin :1.0.0`, isso porque as **_tags remotas não são apagadas ao apagar as tags locais_**
 
-[Ver mais...](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
+[mais sobre tags...](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
 
 $\Overrightarrow{AB}$
