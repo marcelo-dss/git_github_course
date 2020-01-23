@@ -155,4 +155,47 @@ Contras:
 
 [mais sobre rebase...](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 
+## Extras
+
+### Esconder e limpar
+
+para ocultar arquivos mofificados ou estagiados (add) e impedir um commit:
+
+* `git stash` oculta alterações
+* `git stash list` exibe todos os stashs
+* para retorná-los aplicando as mudanças: `git stash apply`
+* para limpar todos os stashs: `git stash clear`
+
+[veja mais...](https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning)
+
+### Aliases do Git
+
+o Git não infere automaticamente seu comando se você o digitar parcialmente. Se você não quiser digitar o texto inteiro de cada um dos comandos do Git, poderá configurar facilmente um alias para cada comando usando git config. Aqui estão alguns exemplos que você pode querer configurar:
+
+`git config --global alias.co checkout`
+`git config --global alias.br branch`
+`git config --global alias.ci commit`
+`git config --global alias.st status`
+
+[mais...](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
+
+### Marcação (Tag)
+como a maioria dos VCSs, o Git tem a capacidade de marcar pontos específicos no histórico de um repositório como sendo importantes. Normalmente, as pessoas usar essa funcionalidade para pontos de liberação de marca ( *v1.0*, *v2.0* e assim por diante). Nesta seção, você aprenderá como listar tags existentes, como criar e excluir tags e quais são os diferentes tipos de tags.
+
+Listando suas tags: `git tag`
+
+#### Criando Tags
+o Git suporta dois tipos de tags: **leve** e **anotado** .
+
+uma tag **leve** é ​​muito parecida com uma ramificação que não muda - é apenas um ponteiro para um commit específico.
+
+tags **anotadas**, no entanto, são armazenadas como objetos completos no banco de dados Git. Eles estão somados; conter o nome, o email e a data do marcador; ter uma mensagem de marcação; e pode ser assinado e verificado com o GNU Privacy Guard (GPG). Geralmente, é recomendável que você crie tags anotadas para ter todas essas informações; mas se você deseja uma tag temporária ou, por algum motivo, não deseja manter as outras informações, também estão disponíveis tags leves. **Exemplo:** `git tag -a 1.0.0 -m "Readme Finalizado"`.
+
+para subir as tags para o remoto: `git push tag origin master --tags`
+
+[Ver mais...](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
+
+
+
+
 $\Overrightarrow{AB}$
