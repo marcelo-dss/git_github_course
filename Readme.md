@@ -40,7 +40,9 @@ com `git commit -am` é possível adicionar e commitar em uma única operação
 
 Após aplicar o `git reset HEAD`, utilize o `git checkout` 
 
-# Criando um repositório no Github
+# [Trabalhando com controles remotos](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
+
+## Criando um repositório no Github
 
 [Gerando uma chave SSH do Github para o seu projeto](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
@@ -60,12 +62,13 @@ no Github:
 
 `git remote add origin git@github.com:marcelo-dss/git_github_course.git`
 
+digite `git remote` para que o git mostre se já existe um repositório chamado _**origin**_ preparado para ser enviado ao github. `git remote -v`, para mais informações
+
 `git push -u origin master`
 
+o `-u` é utilizado no primeiro push para *trackear* para onde vai (*origin*) e de onde vem (*master*). Nos seguintes basta utilizar `push`
 
-
-
-
-
+## Enviando mudanças para um repositório remoto
+`git push origin master`
 
 $\Overrightarrow{AB}$
