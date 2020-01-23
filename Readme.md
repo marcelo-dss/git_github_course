@@ -40,6 +40,32 @@ com `git commit -am` é possível adicionar e commitar em uma única operação
 
 Após aplicar o `git reset HEAD`, utilize o `git checkout` 
 
+# Criando um repositório no Github
+
+[Gerando uma chave SSH do Github para o seu projeto](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+no terminal digite: 
+
+>`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+
+>copie a chave contina no arquivo **__id_rsa_.pub_**
+
+no Github:
+>acesse o menu _**settings**_ e, na coluna de opções do seu perfil, clique em _**SSH and GPG Keys**_. Clique em **_New SSH Keys_**, informe o _**título**_ e cole a chave contida no arquivo _**id_rsa.pub**_
+
+## Ligando o repositório local a um remoto (Github)
+
+1. crie um repositório no Github, por exemplo **git_github_course.git**;
+2. envie um repositório existente a partir da linha de comando:
+
+`git remote add origin git@github.com:marcelo-dss/git_github_course.git`
+
+`git push -u origin master`
+
+
+
+
+
 
 
 $\Overrightarrow{AB}$
